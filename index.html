@@ -1,84 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0f172a" />
-  <title>Connect Sphere | Data, Fabric & Cybersecurity Solutions</title>
-
-  <meta name="description" content="Connect Sphere delivers ETL migration, Microsoft Fabric, Power BI, automation, and cybersecurity services including ethical hacking and data protection." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000" />
+  <title>Connect Sphere | Data Migration • Event-Driven Fabric • Performance</title>
+  <meta name="description" content="Connect Sphere - event-driven data migration, Microsoft Fabric, Power BI performance, automation and enterprise cybersecurity." />
 
   <style>
-    /* Root tokens and performance-minded defaults */
+    /* All-black, high-contrast tech theme with neon accents */
     :root{
-      --bg: #0f172a;            /* dark background for data/tech feel */
-      --card: #0b1220;          /* card background */
-      --muted: #94a3b8;         /* muted text */
-      --accent: #06b6d4;        /* data/analytics accent */
-      --accent-2: #7c3aed;      /* supporting accent */
-      --surface: #0b1220;       /* surfaces */
-      --glass: rgba(255,255,255,0.03);
-      --radius: 12px;
-      --max-width: 1100px;
-      --focus: 3px solid rgba(6,182,212,0.12);
+      --bg:#000000;
+      --panel:#071018;      /* slightly off-black for panels */
+      --muted:#9aa6b2;
+      --accent:#00f0ff;     /* neon cyan */
+      --accent-2:#9b5cff;   /* neon purple */
+      --glass:rgba(255,255,255,0.03);
+      --radius:12px;
+      --max-width:1200px;
+      --focus:0 0 0 4px rgba(0,240,255,0.07);
     }
 
-    /* Use system font stack for fast rendering */
-    html{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.4;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:linear-gradient(180deg,var(--bg),#071024);color:#e6eef6}
+    /* Performance-first typography */
+    html{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.45;-webkit-font-smoothing:antialiased;background:var(--bg);color:var(--muted)}
     *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-size:16px}
 
-    body{margin:0;font-size:16px;background:linear-gradient(180deg,#071024 0%, #071024 100%);color:var(--muted);}
+    /* Subtle tech grid background using repeating gradients (low paint cost) */
+    body::before{
+      content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.06;background:
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size:160px 160px,160px 160px;
+      mix-blend-mode:overlay;
+    }
 
-    /* Simple, high-contrast nav */
-    nav{background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:30;border-bottom:1px solid rgba(255,255,255,0.03)}
-    nav strong{color:#fff}
-    nav a{margin-left:16px;text-decoration:none;color:var(--muted);font-weight:600;font-size:0.95rem}
-    nav a:hover{color:#fff}
+    nav{position:sticky;top:0;z-index:20;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);padding:14px 22px;display:flex;align-items:center;justify-content:space-between}
+    nav strong{color:#fff;letter-spacing:0.6px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a:hover{color:var(--accent)}
 
-    header{padding:64px 20px;text-align:left;max-width:var(--max-width);margin:24px auto;border-radius:12px;background:linear-gradient(90deg,rgba(6,182,212,0.08),rgba(124,58,237,0.06));box-shadow:0 6px 24px rgba(2,6,23,0.6);display:block}
-    header h1{margin:0;color:#fff;font-size:2.1rem}
-    header p{margin:8px 0;color:var(--muted)}
+    header{max-width:var(--max-width);margin:36px auto;padding:40px;border-radius:14px;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(8,12,20,0.85));box-shadow:0 8px 40px rgba(2,6,23,0.7);position:relative;z-index:2}
+    header .eyebrow{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#000;font-weight:700;font-size:0.8rem}
+    header h1{margin:18px 0 6px;color:#fff;font-size:2rem}
+    header p.lead{margin:0;color:var(--muted);font-size:1rem}
 
-    .container{max-width:var(--max-width);margin:20px auto;padding:24px}
+    .container{max-width:var(--max-width);margin:26px auto;padding:0 22px;position:relative;z-index:2}
 
-    /* Grid that's friendly to screen readers and fast layout */
-    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:18px}
 
-    /* Cards optimized for compositing and painting performance */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:var(--radius);box-shadow:0 4px 16px rgba(2,6,23,0.6);transition:transform .18s ease, box-shadow .18s ease, background .18s ease;contain:layout;overflow:hidden}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.006));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 24px rgba(2,6,23,0.6);transition:transform .15s ease,box-shadow .15s ease;overflow:hidden}
     .card h3{margin:0 0 8px 0;color:#fff;font-size:1.05rem}
     .card p{margin:0;color:var(--muted);font-size:0.95rem}
-    .card ul{margin:8px 0 0 18px;color:var(--muted)}
+    .card .badge{display:inline-block;margin-top:12px;padding:6px 8px;border-radius:6px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#001018;font-weight:700;font-size:0.75rem}
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 38px rgba(0,0,0,0.7)}
 
-    /* Subtle, performant hover: transform on composite-only property */
-    .card:hover{transform:translateY(-6px) translateZ(0);box-shadow:0 10px 26px rgba(2,6,23,0.7)}
+    .section-title{text-align:left;margin-bottom:10px;color:#e6eef6}
 
-    .section-title{text-align:center;margin-bottom:20px;color:#e6eef6}
+    .cta{display:flex;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(90deg,rgba(0,0,0,0.55),rgba(8,12,20,0.7));padding:28px;border-radius:12px;margin:28px 0}
+    .cta .left{color:#fff}
+    .cta h2{margin:0;font-size:1.25rem}
+    .cta button{background:transparent;border:2px solid var(--accent);color:var(--accent);padding:12px 18px;border-radius:10px;font-weight:700;cursor:pointer}
+    .cta button:hover{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#001018;border-color:transparent}
 
-    .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#061226;text-align:center;padding:48px 20px;border-radius:12px;margin:24px 0}
-    .cta h2{margin:0 0 12px 0;color:#fff}
-    .cta button{padding:12px 20px;border:none;border-radius:8px;background:#041025;color:#fff;cursor:pointer;font-weight:700}
-    .cta button:focus{outline:none;box-shadow:var(--focus)}
+    .process{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:12px}
+    .process .card{text-align:center}
 
-    .process{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;text-align:center}
+    form{max-width:620px;margin:8px 0 0 0;display:flex;flex-direction:column;gap:12px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:8px;color:var(--muted)}
+    input:focus,textarea:focus{outline:none;box-shadow:var(--focus)}
+    .submit{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:#001018;padding:12px;border-radius:8px;font-weight:800;cursor:pointer}
 
-    form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
-    input,textarea{padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#e6eef6}
-    input:focus,textarea:focus{outline:none;box-shadow:var(--focus);border-color:rgba(6,182,212,0.2)}
-    button.submit{background:var(--accent);color:#041025;border:none;padding:12px;border-radius:8px;font-weight:700;cursor:pointer}
+    footer{padding:26px 12px;text-align:center;color:var(--muted)}
 
-    footer{background:transparent;color:var(--muted);text-align:center;padding:28px 12px;margin-top:24px}
-
-    /* Accessibility & reduced motion */
+    /* Performance & accessibility */
     @media (prefers-reduced-motion: reduce){
-      .card,.cta{transition:none}
+      .card,.cta,button{transition:none}
     }
 
-    /* Responsive tweaks */
-    @media (max-width:600px){
-      header{padding:36px 16px}
-      header h1{font-size:1.5rem}
-      nav a{font-size:0.9rem}
+    @media (max-width:700px){
+      header h1{font-size:1.4rem}
+      .cta{flex-direction:column;align-items:flex-start}
+      nav a{margin-left:12px}
     }
   </style>
 </head>
@@ -95,140 +98,123 @@
 </nav>
 
 <header>
-  <h1>Connect Sphere</h1>
-  <p>Enterprise Data & Cybersecurity Solutions — performance and reliability focused</p>
-  <p style="color:var(--muted);font-size:0.95rem">ETL Migration · Microsoft Fabric · Power BI · Automation · Security</p>
+  <span class="eyebrow">Event-Driven • Low-Latency • Secure</span>
+  <h1>All-black, performance-first data migration & event-driven Fabric</h1>
+  <p class="lead">Designing high-throughput data pipelines, reactive event architectures and production-grade security for enterprise scale.</p>
 </header>
 
-<section id="services" class="container">
-  <h2 class="section-title">Core Services</h2>
-  <div class="services">
-    <div class="card" role="article"><h3>ETL Migration</h3><p>Modernize legacy systems into Microsoft Fabric with performance-first pipelines.</p></div>
-    <div class="card" role="article"><h3>ETL Maintenance</h3><p>Reliable, cost-efficient pipeline monitoring and optimization.</p></div>
-    <div class="card" role="article"><h3>Power BI</h3><p>High-performance executive dashboards and actionable insights.</p></div>
-    <div class="card" role="article"><h3>Automation</h3><p>Streamline workflows and reduce latency using Power Automate and serverless patterns.</p></div>
-  </div>
-</section>
+<main class="container">
+  <section id="services">
+    <h2 class="section-title">Core Services</h2>
+    <div class="services">
+      <div class="card" role="article">
+        <h3>Data Migration</h3>
+        <p>Zero-downtime ETL migrations to modern data platforms with schema evolution and validation.</p>
+        <div class="badge">Throughput-focused</div>
+      </div>
 
-<section id="security" class="container">
-  <h2 class="section-title">Cybersecurity & Data Protection</h2>
-  <div class="services">
-    <div class="card"><h3>SQL Injection Testing</h3><p>Detect and fix database vulnerabilities before they impact performance or privacy.</p></div>
-    <div class="card"><h3>Ethical Hacking</h3><p>Controlled penetration testing and attack surface reduction.</p></div>
-    <div class="card"><h3>Compliance</h3><p>Alignment with POPIA & GDPR data protection standards.</p></div>
-    <div class="card"><h3>Content Removal</h3><p>Assist in removing sensitive data from public platforms quickly and safely.</p></div>
-  </div>
-</section>
+      <div class="card" role="article">
+        <h3>Event-Driven Fabric</h3>
+        <p>Reactive, event-first architectures built on Microsoft Fabric and serverless components.</p>
+        <div class="badge">Event-driven</div>
+      </div>
 
-<section id="process" class="container">
-  <h2 class="section-title">How We Work</h2>
-  <div class="process">
-    <div class="card"><h3>1. Assess</h3><p>Understand systems, risks, performance baselines, and goals.</p></div>
-    <div class="card"><h3>2. Design</h3><p>Architect scalable, secure, and cost-effective solutions.</p></div>
-    <div class="card"><h3>3. Implement</h3><p>Deploy pipelines, dashboards, and security controls with automation and observability.</p></div>
-    <div class="card"><h3>4. Support</h3><p>Continuous monitoring, cost/performance tuning, and improvement.</p></div>
-  </div>
-</section>
+      <div class="card" role="article">
+        <h3>Performance Engineering</h3>
+        <p>Query & model optimization, caching, partitioning and observability to reduce latency.</p>
+        <div class="badge">Low-latency</div>
+      </div>
 
-<section class="container">
-  <h2 class="section-title">Why Choose Us</h2>
-  <div class="services">
-    <div class="card"><h3>Enterprise Focus</h3><p>Built for scalable business environments where reliability matters.</p></div>
-    <div class="card"><h3>Secure by Design</h3><p>Security integrated into every solution from architecture to runbooks.</p></div>
-    <div class="card"><h3>Cloud Expertise</h3><p>Deep Microsoft Fabric and Azure alignment for performance and cost control.</p></div>
-    <div class="card"><h3>End-to-End</h3><p>From data migration to insights and ongoing resilience.</p></div>
-  </div>
-</section>
+      <div class="card" role="article">
+        <h3>Security & Compliance</h3>
+        <p>Threat modelling, ethical hacking, and data protection aligned to enterprise governance.</p>
+        <div class="badge">Secure-by-design</div>
+      </div>
+    </div>
+  </section>
 
-<section class="cta">
-  <h2>Ready to Transform & Secure Your Data?</h2>
-  <button type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
-</section>
+  <section id="security" style="margin-top:28px">
+    <h2 class="section-title">Cybersecurity & Data Protection</h2>
+    <div class="services">
+      <div class="card"><h3>Penetration Testing</h3><p>Pre-production tests and remediation playbooks.</p></div>
+      <div class="card"><h3>Data Governance</h3><p>Catalogs, lineage and policy enforcement for sensitive data.</p></div>
+      <div class="card"><h3>Incident Response</h3><p>Fast containment, forensics and recovery runbooks.</p></div>
+      <div class="card"><h3>Content Removal</h3><p>Assist in removing exposed sensitive data from public sources.</p></div>
+    </div>
+  </section>
 
-<section id="contact" class="container">
-  <h2 class="section-title">Contact Us</h2>
-  <form action="https://formspree.io/f/your-form-id" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required aria-label="Your name">
-    <input type="email" name="email" placeholder="Your Email" required aria-label="Your email">
-    <textarea name="message" rows="5" placeholder="Your Message" required aria-label="Your message"></textarea>
-    <button class="submit" type="submit">Send Message</button>
-  </form>
-</section>
+  <section id="process" style="margin-top:28px">
+    <h2 class="section-title">How We Work</h2>
+    <div class="process">
+      <div class="card"><h3>1. Assess</h3><p>Benchmarks, SLA targets and risk analysis.</p></div>
+      <div class="card"><h3>2. Design</h3><p>Event contracts, schemas, and scaling patterns.</p></div>
+      <div class="card"><h3>3. Implement</h3><p>CI/CD, tests, observability and deployment automation.</p></div>
+      <div class="card"><h3>4. Operate</h3><p>Runbooks, cost/perf tuning and continuous improvement.</p></div>
+    </div>
+  </section>
 
-<!-- Pricing -->
-<section class="container">
-  <h2 class="section-title">Pricing Packages</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Starter</h3>
-      <p>Ideal for small businesses</p>
-      <ul>
-        <li>Basic ETL setup</li>
-        <li>1 Power BI dashboard</li>
-        <li>Email support</li>
-      </ul>
+  <section style="margin-top:28px">
+    <div class="cta">
+      <div class="left">
+        <h2>Ready to build event-driven, high-performance data platforms?</h2>
+        <p style="margin:6px 0;color:var(--muted)">We specialize in migration, Fabric, observability and enterprise security.</p>
+      </div>
+      <div>
+        <button type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a Project</button>
+      </div>
     </div>
-    <div class="card">
-      <h3>Professional</h3>
-      <p>For growing organizations</p>
-      <ul>
-        <li>ETL migration to Fabric</li>
-        <li>Multiple dashboards</li>
-        <li>Automation workflows</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Enterprise</h3>
-      <p>Full-scale transformation</p>
-      <ul>
-        <li>End-to-end data platform</li>
-        <li>Cybersecurity testing</li>
-        <li>Ongoing support</li>
-      </ul>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Case Studies -->
-<section class="container">
-  <h2 class="section-title">Case Studies</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Retail Analytics</h3>
-      <p>Improved reporting speed by 60% using Power BI dashboards and optimized data models.</p>
-    </div>
-    <div class="card">
-      <h3>Cloud Migration</h3>
-      <p>Migrated legacy ETL systems to Microsoft Fabric with zero downtime and improved throughput.</p>
-    </div>
-    <div class="card">
-      <h3>Security Audit</h3>
-      <p>Identified and resolved critical vulnerabilities and hardened production systems.</p>
-    </div>
-  </div>
-</section>
+  <section id="contact" style="margin-top:28px">
+    <h2 class="section-title">Contact Us</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input name="name" type="text" placeholder="Your name" required aria-label="Your name">
+      <input name="email" type="email" placeholder="Your email" required aria-label="Your email">
+      <textarea name="message" rows="5" placeholder="How can we help?" required aria-label="Your message"></textarea>
+      <button class="submit" type="submit">Send Message</button>
+    </form>
+  </section>
 
-<!-- Testimonials -->
-<section class="container">
-  <h2 class="section-title">What Clients Say</h2>
-  <div class="services">
-    <div class="card">
-      <p>"Connect Sphere transformed our data infrastructure completely."</p>
-      <strong>- Business Client</strong>
+  <section style="margin-top:34px">
+    <h2 class="section-title">Why Choose Us</h2>
+    <div class="services">
+      <div class="card"><h3>Enterprise-ready</h3><p>Architecture and ops practices for scale and reliability.</p></div>
+      <div class="card"><h3>Observability-first</h3><p>Telemetry and SLO-driven operations to avoid regressions.</p></div>
+      <div class="card"><h3>Cost & Performance</h3><p>Right-sizing, partitioning and caching to optimize total cost of ownership.</p></div>
+      <div class="card"><h3>End-to-end</h3><p>From migration plans to runbooks and long term support.</p></div>
     </div>
-    <div class="card">
-      <p>"Professional, reliable, and highly skilled team."</p>
-      <strong>- Tech Manager</strong>
+  </section>
+
+  <section style="margin-top:28px">
+    <h2 class="section-title">Case Studies</h2>
+    <div class="services">
+      <div class="card"><h3>Retail Analytics</h3><p>60% faster reports by re-architecting models and query patterns.</p></div>
+      <div class="card"><h3>Real-time Fabric</h3><p>Event-driven ingestion with micro-batches and near-real-time dashboards.</p></div>
+      <div class="card"><h3>Security Audit</h3><p>Hardening and privacy controls across pipelines and endpoints.</p></div>
     </div>
-    <div class="card">
-      <p>"Their security insights saved us from major risks."</p>
-      <strong>- Enterprise Client</strong>
+  </section>
+
+  <section style="margin-top:28px">
+    <h2 class="section-title">Pricing Packages</h2>
+    <div class="services">
+      <div class="card"><h3>Starter</h3><p>Quick migration assessment and a baseline pipeline.</p></div>
+      <div class="card"><h3>Professional</h3><p>Event-driven migration, observability, and dashboards.</p></div>
+      <div class="card"><h3>Enterprise</h3><p>Full platform + security + SRE support.</p></div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section style="margin-top:28px">
+    <h2 class="section-title">What Clients Say</h2>
+    <div class="services">
+      <div class="card"><p>"Transformed our analytics to real-time with predictable SLAs."</p><strong>- Retail CIO</strong></div>
+      <div class="card"><p>"Clear focus on performance and security from day one."</p><strong>- Platform Lead</strong></div>
+      <div class="card"><p>"Reduced costs while improving throughput and reliability."</p><strong>- Enterprise Ops</strong></div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <p>© 2026 Connect Sphere | Data • Cloud • Security</p>
+  <p style="color:var(--muted)">© 2026 Connect Sphere | Event-Driven Data • Fabric • Performance • Security</p>
 </footer>
 
 </body>
