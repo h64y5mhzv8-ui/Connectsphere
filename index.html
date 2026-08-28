@@ -78,7 +78,7 @@
     .process .card{text-align:center}
 
     /* Data flow visualization */
-    .data-flow-hero{width:100%;height:300px;background:linear-gradient(135deg, rgba(0,20,30,0.9), rgba(5,10,20,0.9));border-radius:14px;margin:28px 0;overflow:hidden;border:1px solid rgba(0,240,255,0.1);position:relative}
+    .data-flow-hero{width:100%;height:400px;background:linear-gradient(135deg, rgba(0,20,30,0.95), rgba(5,10,20,0.95));border-radius:14px;margin:28px 0;overflow:hidden;border:1px solid rgba(0,240,255,0.1);position:relative}
     .data-flow-canvas{width:100%;height:100%;display:block}
 
     form{max-width:620px;margin:8px 0 0 0;display:flex;flex-direction:column;gap:12px}
@@ -110,7 +110,7 @@
       header h1{font-size:1.4rem}
       .cta{flex-direction:column;align-items:flex-start}
       nav a{margin-left:12px}
-      .data-flow-hero{height:250px}
+      .data-flow-hero{height:350px}
     }
   </style>
 </head>
@@ -120,7 +120,7 @@
   <div class="brand">
     <!-- Connect Sphere Logo with animation -->
     <a href="/" class="logo logo-float" aria-label="Connect Sphere home">
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2300f0ff;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%239b5cff;stop-opacity:1' /%3E%3ClinearGradient id='grad-anim' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2300f0ff;stop-opacity:0.3' /%3E%3Cstop offset='50%25' style='stop-color:%239b5cff;stop-opacity:0.8' /%3E%3Cstop offset='100%25' style='stop-color:%2300f0ff;stop-opacity:0.3' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='100' cy='100' r='95' fill='none' stroke='%23333' stroke-width='1' opacity='0.3'/%3E%3Cg transform='translate(100,100)'%3E%3Ccircle cx='0' cy='-50' r='6' fill='%23999'/%3E%3Ccircle cx='43' cy='-25' r='5' fill='%23999'/%3E%3Ccircle cx='43' cy='25' r='5' fill='%23999'/%3E%3Ccircle cx='0' cy='50' r='6' fill='%23666'/%3E%3Ccircle cx='-43' cy='25' r='5' fill='%23999'/%3E%3Ccircle cx='-43' cy='-25' r='5' fill='%23999'/%3E%3Cline x1='0' y1='-50' x2='43' y2='-25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='0' y1='-50' x2='-43' y2='-25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='43' y1='-25' x2='43' y2='25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='43' y1='25' x2='0' y2='50' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='0' y1='50' x2='-43' y2='25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='-43' y1='25' x2='-43' y2='-25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='-43' y1='-25' x2='0' y2='-50' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='43' y1='-25' x2='-43' y2='25' stroke='%23999' stroke-width='1' opacity='0.4'/%3E%3Cline x1='43' y1='25' x2='-43' y2='-25' stroke='%23999' stroke-width='1' opacity='0.4'/%3E%3C/g%3E%3Cpath d='M 130 80 Q 140 80 145 90 Q 145 105 130 105 Q 120 105 120 95 Q 120 80 130 80' fill='none' stroke='url(%23grad1)' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M 130 120 L 155 120 Q 160 120 160 130 Q 160 145 145 145 Q 125 145 125 130' fill='none' stroke='url(%23grad1)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="Connect Sphere">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2300f0ff;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%239b5cff;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='100' cy='100' r='95' fill='none' stroke='%23333' stroke-width='1' opacity='0.3'/%3E%3Cg transform='translate(100,100)'%3E%3Ccircle cx='0' cy='-50' r='6' fill='%23999'/%3E%3Ccircle cx='43' cy='-25' r='5' fill='%23999'/%3E%3Ccircle cx='43' cy='25' r='5' fill='%23999'/%3E%3Ccircle cx='0' cy='50' r='6' fill='%23666'/%3E%3Ccircle cx='-43' cy='25' r='5' fill='%23999'/%3E%3Ccircle cx='-43' cy='-25' r='5' fill='%23999'/%3E%3Cline x1='0' y1='-50' x2='43' y2='-25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='0' y1='-50' x2='-43' y2='-25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='43' y1='-25' x2='43' y2='25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='43' y1='25' x2='0' y2='50' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='0' y1='50' x2='-43' y2='25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='-43' y1='25' x2='-43' y2='-25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='-43' y1='-25' x2='0' y2='-50' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='43' y1='-25' x2='-43' y2='25' stroke='%23999' stroke-width='1' opacity='0.4'/%3E%3Cline x1='43' y1='25' x2='-43' y2='-25' stroke='%23999' stroke-width='1' opacity='0.4'/%3E%3C/g%3E%3Cpath d='M 130 80 Q 140 80 145 90 Q 145 105 130 105 Q 120 105 120 95 Q 120 80 130 80' fill='none' stroke='url(%23grad1)' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M 130 120 L 155 120 Q 160 120 160 130 Q 160 145 145 145 Q 125 145 125 130' fill='none' stroke='url(%23grad1)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="Connect Sphere">
       <strong style="color:#fff;font-size:1rem">Connect Sphere</strong>
     </a>
   </div>
@@ -139,9 +139,9 @@
 </header>
 
 <main class="container">
-  <!-- Secure Data Flow Visualization -->
+  <!-- Integration & Migration Visualization -->
   <section style="margin-top:28px">
-    <h2 class="section-title">Secure Data Flow in Motion</h2>
+    <h2 class="section-title">Integration & Migration Patterns in Motion</h2>
     <div class="data-flow-hero">
       <canvas class="data-flow-canvas" id="dataFlowCanvas"></canvas>
     </div>
@@ -261,7 +261,7 @@
 </footer>
 
 <script>
-  // Secure Data Flow Canvas Animation
+  // Advanced Integration & Migration Visualization with Bubbles
   const canvas = document.getElementById('dataFlowCanvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -273,75 +273,167 @@
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Data packet animation
-    class DataPacket {
-      constructor(x, y, targetX, targetY, color) {
+    // Integration node with label
+    class IntegrationBubble {
+      constructor(x, y, radius, label, color, type = 'integration') {
         this.x = x;
         this.y = y;
-        this.targetX = targetX;
-        this.targetY = targetY;
+        this.radius = radius;
+        this.label = label;
         this.color = color;
-        this.progress = 0;
-        this.speed = 0.008 + Math.random() * 0.004;
-        this.size = 3 + Math.random() * 2;
-        this.encrypted = true;
+        this.type = type;
+        this.pulsePhase = Math.random() * Math.PI * 2;
+        this.pulseSpeed = 0.02 + Math.random() * 0.01;
+        this.wobble = 0;
+      }
+
+      update() {
+        this.pulsePhase += this.pulseSpeed;
+        this.wobble = Math.sin(this.pulsePhase) * 2;
+      }
+
+      draw() {
+        ctx.save();
+        
+        // Draw outer glow
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = 0.1 + Math.sin(this.pulsePhase) * 0.05;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius * 1.8, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Draw main bubble
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = 0.3 + Math.sin(this.pulsePhase) * 0.1;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Draw border
+        ctx.strokeStyle = this.color;
+        ctx.lineWidth = 2;
+        ctx.globalAlpha = 0.6 + Math.sin(this.pulsePhase) * 0.2;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.stroke();
+        
+        // Draw label
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = 0.9;
+        ctx.font = 'bold 11px system-ui';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(this.label, this.x, this.y);
+        
+        ctx.restore();
+      }
+    }
+
+    // Data packet traveling between bubbles
+    class MigrationPacket {
+      constructor(startBubble, endBubble, color) {
+        this.startBubble = startBubble;
+        this.endBubble = endBubble;
+        this.color = color;
+        this.progress = Math.random();
+        this.speed = 0.004 + Math.random() * 0.003;
       }
 
       update() {
         this.progress += this.speed;
         if (this.progress > 1) {
           this.progress = 0;
-          this.x = Math.random() * canvas.width * 0.2 + 10;
-          this.y = Math.random() * canvas.height;
-          this.targetX = canvas.width - (Math.random() * canvas.width * 0.2 + 10);
-          this.targetY = Math.random() * canvas.height;
         }
-        this.x += (this.targetX - this.x) * this.speed * 2;
-        this.y += (this.targetY - this.y) * this.speed * 2;
       }
 
       draw() {
+        const x = this.startBubble.x + (this.endBubble.x - this.startBubble.x) * this.progress;
+        const y = this.startBubble.y + (this.endBubble.y - this.startBubble.y) * this.progress;
+        
         ctx.save();
-        ctx.globalAlpha = 0.8 - Math.sin(this.progress * Math.PI) * 0.3;
+        ctx.globalAlpha = 0.7 - Math.abs(this.progress - 0.5) * 0.5;
         
         // Draw packet
         ctx.fillStyle = this.color;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.arc(x, y, 4, 0, Math.PI * 2);
         ctx.fill();
         
-        // Draw encryption lock aura
+        // Draw packet glow
         ctx.strokeStyle = this.color;
-        ctx.lineWidth = 0.5;
+        ctx.lineWidth = 1;
         ctx.globalAlpha = 0.4;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size * 2, 0, Math.PI * 2);
+        ctx.arc(x, y, 8, 0, Math.PI * 2);
         ctx.stroke();
         
         ctx.restore();
       }
     }
 
-    const packets = [];
-    const packetCount = 8;
-    const colors = ['#00f0ff', '#9b5cff', '#00ff88'];
+    // Create integration bubbles representing different systems
+    const bubbles = [];
+    const packetTypes = [
+      { label: 'API', color: '#00f0ff', type: 'source' },
+      { label: 'DB', color: '#00ff88', type: 'database' },
+      { label: 'ETL', color: '#9b5cff', type: 'process' },
+      { label: 'Fabric', color: '#ff6b9d', type: 'destination' },
+      { label: 'Cache', color: '#ffd700', type: 'cache' },
+      { label: 'Queue', color: '#00a8e8', type: 'queue' }
+    ];
 
-    // Initialize packets
-    for (let i = 0; i < packetCount; i++) {
-      const x = Math.random() * canvas.width * 0.2 + 10;
-      const y = Math.random() * canvas.height;
-      const targetX = canvas.width - (Math.random() * canvas.width * 0.2 + 10);
-      const targetY = Math.random() * canvas.height;
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      packets.push(new DataPacket(x, y, targetX, targetY, color));
+    // Position bubbles in a circular pattern
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const circleRadius = Math.min(canvas.width, canvas.height) * 0.25;
+
+    packetTypes.forEach((packet, i) => {
+      const angle = (i / packetTypes.length) * Math.PI * 2;
+      const x = centerX + Math.cos(angle) * circleRadius;
+      const y = centerY + Math.sin(angle) * circleRadius;
+      bubbles.push(new IntegrationBubble(x, y, 35, packet.label, packet.color, packet.type));
+    });
+
+    const packets = [];
+    
+    // Create packets between adjacent bubbles
+    for (let i = 0; i < bubbles.length; i++) {
+      const nextIndex = (i + 1) % bubbles.length;
+      packets.push(new MigrationPacket(bubbles[i], bubbles[nextIndex], packetTypes[i].color));
+      // Add extra packets for busier paths
+      packets.push(new MigrationPacket(bubbles[i], bubbles[nextIndex], packetTypes[nextIndex].color));
     }
 
-    // Draw connecting grid
+    // Draw connecting lines
+    function drawConnections() {
+      ctx.strokeStyle = 'rgba(0, 240, 255, 0.15)';
+      ctx.lineWidth = 1;
+      
+      for (let i = 0; i < bubbles.length; i++) {
+        const nextIndex = (i + 1) % bubbles.length;
+        ctx.beginPath();
+        ctx.moveTo(bubbles[i].x, bubbles[i].y);
+        ctx.lineTo(bubbles[nextIndex].x, bubbles[nextIndex].y);
+        ctx.stroke();
+      }
+      
+      // Draw diagonal connections for mesh pattern
+      ctx.strokeStyle = 'rgba(155, 92, 255, 0.08)';
+      for (let i = 0; i < bubbles.length; i += 2) {
+        const targetIndex = (i + Math.floor(bubbles.length / 2)) % bubbles.length;
+        ctx.beginPath();
+        ctx.moveTo(bubbles[i].x, bubbles[i].y);
+        ctx.lineTo(bubbles[targetIndex].x, bubbles[targetIndex].y);
+        ctx.stroke();
+      }
+    }
+
+    // Draw background grid
     function drawGrid() {
-      ctx.strokeStyle = 'rgba(0, 240, 255, 0.1)';
+      ctx.strokeStyle = 'rgba(0, 240, 255, 0.05)';
       ctx.lineWidth = 0.5;
       
-      const gridSize = 60;
+      const gridSize = 50;
       for (let x = 0; x < canvas.width; x += gridSize) {
         ctx.beginPath();
         ctx.moveTo(x, 0);
@@ -356,33 +448,15 @@
       }
     }
 
-    // Draw security shield zones
-    function drawShields() {
-      ctx.fillStyle = 'rgba(0, 240, 255, 0.05)';
-      ctx.strokeStyle = 'rgba(0, 240, 255, 0.15)';
-      ctx.lineWidth = 1;
-      
-      const shieldSize = 80;
-      ctx.beginPath();
-      ctx.arc(60, canvas.height / 2, shieldSize, 0, Math.PI * 2);
-      ctx.stroke();
-      ctx.fill();
-      
-      ctx.beginPath();
-      ctx.arc(canvas.width - 60, canvas.height / 2, shieldSize, 0, Math.PI * 2);
-      ctx.stroke();
-      ctx.fill();
-    }
-
     // Animation loop
     function animate() {
-      // Clear canvas with fade effect
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+      // Clear with fade
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
-      // Draw background elements
+      // Draw background
       drawGrid();
-      drawShields();
+      drawConnections();
       
       // Update and draw packets
       packets.forEach(packet => {
@@ -390,12 +464,17 @@
         packet.draw();
       });
       
-      // Draw source and destination labels
-      ctx.fillStyle = 'rgba(0, 240, 255, 0.6)';
-      ctx.font = '12px system-ui';
+      // Update and draw bubbles
+      bubbles.forEach(bubble => {
+        bubble.update();
+        bubble.draw();
+      });
+      
+      // Draw title
+      ctx.fillStyle = 'rgba(0, 240, 255, 0.5)';
+      ctx.font = 'bold 14px system-ui';
       ctx.textAlign = 'center';
-      ctx.fillText('SOURCE', 30, 20);
-      ctx.fillText('DESTINATION', canvas.width - 30, 20);
+      ctx.fillText('Integration Mesh Network', canvas.width / 2, 25);
       
       requestAnimationFrame(animate);
     }
