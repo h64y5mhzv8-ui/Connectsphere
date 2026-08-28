@@ -27,12 +27,12 @@
     body{margin:0;font-size:16px}
 
     /* Background grid (low-paint) */
-    body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.06;background:linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),linear-gradient(0deg, rgba(255,255,255,0.02) 1px, transparent 1px);background-size:160px 160px,160px 160px;mix-blend-mode:overlay}
+    body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.06;background:linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),linear-gradient(0deg, rgba(255,255,255,0.02) 1px, transparent 1px);background-size:50px 50px}
 
-    nav{position:sticky;top:0;z-index:20;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
+    nav{position:sticky;top:0;z-index:20;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.02);padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:12px}
     .logo{display:inline-flex;align-items:center;text-decoration:none;color:inherit}
-    .logo svg{height:36px;width:auto;display:block}
+    .logo img{height:48px;width:auto;display:block}
     nav strong{color:#fff;letter-spacing:0.6px}
     nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600;position:relative}
     /* nav underline animation */
@@ -40,7 +40,7 @@
     nav a:hover::after{width:100%}
     nav a:hover{color:var(--accent)}
 
-    header{max-width:var(--max-width);margin:30px auto;padding:36px;border-radius:14px;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(8,12,20,0.85));box-shadow:0 8px 40px rgba(2,6,23,0.7);position:relative;z-index:2}
+    header{max-width:var(--max-width);margin:30px auto;padding:36px;border-radius:14px;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(8,12,20,0.85));box-shadow:0 8px 40px rgba(2,6,23,0.7);position:relative;z-index:1}
     header .eyebrow{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#001018;font-weight:700;font-size:0.78rem}
     header h1{margin:18px 0 6px;color:#fff;font-size:2rem}
     header p.lead{margin:0;color:var(--muted);font-size:1rem}
@@ -49,7 +49,7 @@
 
     .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:18px}
 
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.006));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 24px rgba(2,6,23,0.6);transition:transform .12s ease,box-shadow .12s ease,filter .12s ease;overflow:hidden;contain:layout}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.006));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 24px rgba(2,6,23,0.4);transition:all .22s ease-out}
     .card h3{margin:0 0 8px 0;color:#fff;font-size:1.05rem}
     .card p{margin:0;color:var(--muted);font-size:0.95rem}
     .badge{display:inline-block;margin-top:12px;padding:6px 8px;border-radius:6px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#001018;font-weight:700;font-size:0.75rem}
@@ -57,7 +57,7 @@
     .card:hover{transform:translateY(-6px);filter:drop-shadow(0 12px 30px rgba(0,0,0,0.6))}
 
     /* badge shimmer */
-    .badge::after{content:"";display:block;height:100%;width:40px;position:relative;top:-36px;left:-6px;background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.18), rgba(255,255,255,0.06));transform:translateX(-120%);opacity:0.7;pointer-events:none;transition:transform 0.9s cubic-bezier(.2,.9,.2,1)}
+    .badge::after{content:"";display:block;height:100%;width:40px;position:relative;top:-36px;left:-6px;background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.18), rgba(255,255,255,0.04));transition:transform .36s ease;transform:translateX(-120%)}
     .card:hover .badge::after{transform:translateX(120%)}
 
     .section-title{text-align:left;margin-bottom:10px;color:#e6eef6}
@@ -100,21 +100,9 @@
 
 <nav>
   <div class="brand">
-    <!-- Inline SVG logo placeholder: replace the <svg>...</svg> with your own logo or change the <img> src below to a hosted file. -->
+    <!-- Connect Sphere Logo -->
     <a href="/" class="logo" aria-label="Connect Sphere home">
-      <svg class="logo-float" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <defs>
-          <linearGradient id="g" x1="0" x2="1">
-            <stop offset="0" stop-color="#00f0ff" />
-            <stop offset="1" stop-color="#9b5cff" />
-          </linearGradient>
-        </defs>
-        <rect width="64" height="64" rx="12" fill="#001018" />
-        <g transform="translate(8,8)" stroke="url(#g)" stroke-width="3" fill="none" stroke-linecap="round">
-          <path d="M4 28 C12 4, 44 4, 52 28" />
-          <path d="M4 36 C12 60, 44 60, 52 36" />
-        </g>
-      </svg>
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2300f0ff;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%239b5cff;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='100' cy='100' r='95' fill='none' stroke='%23333' stroke-width='1' opacity='0.3'/%3E%3Cg transform='translate(100,100)'%3E%3Ccircle cx='0' cy='-50' r='6' fill='%23999'/%3E%3Ccircle cx='43' cy='-25' r='5' fill='%23999'/%3E%3Ccircle cx='43' cy='25' r='5' fill='%23999'/%3E%3Ccircle cx='0' cy='50' r='6' fill='%23666'/%3E%3Ccircle cx='-43' cy='25' r='5' fill='%23999'/%3E%3Ccircle cx='-43' cy='-25' r='5' fill='%23999'/%3E%3Cline x1='0' y1='-50' x2='43' y2='-25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='0' y1='-50' x2='-43' y2='-25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='43' y1='-25' x2='43' y2='25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='43' y1='25' x2='0' y2='50' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='0' y1='50' x2='-43' y2='25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='-43' y1='25' x2='-43' y2='-25' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='-43' y1='-25' x2='0' y2='-50' stroke='%23999' stroke-width='1' opacity='0.6'/%3E%3Cline x1='43' y1='-25' x2='-43' y2='25' stroke='%23999' stroke-width='1' opacity='0.4'/%3E%3Cline x1='43' y1='25' x2='-43' y2='-25' stroke='%23999' stroke-width='1' opacity='0.4'/%3E%3C/g%3E%3Cpath d='M 130 80 Q 140 80 145 90 Q 145 105 130 105 Q 120 105 120 95 Q 120 80 130 80' fill='none' stroke='url(%23grad1)' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M 130 120 L 155 120 Q 160 120 160 130 Q 160 145 145 145 Q 125 145 125 130' fill='none' stroke='url(%23grad1)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="Connect Sphere" class="logo-float">
       <strong style="color:#fff;font-size:1rem">Connect Sphere</strong>
     </a>
   </div>
@@ -127,8 +115,8 @@
 </nav>
 
 <header>
-  <span class="eyebrow">Event-Driven • Low-Latency • Secure</span>
-  <h1>All-black, performance-first data migration & event-driven Fabric</h1>
+  <span class="eyebrow">Security-First • Event-Driven • High-Performance</span>
+  <h1>Connect Sphere: Security-first data migration & event-driven technology</h1>
   <p class="lead">Designing high-throughput data pipelines, reactive event architectures and production-grade security for enterprise scale.</p>
 </header>
 
@@ -243,7 +231,7 @@
 </main>
 
 <footer>
-  <p style="color:var(--muted)">© 2026 Connect Sphere | Event-Driven Data • Fabric • Performance • Security</p>
+  <p style="color:var(--muted)">© 2026 Connect Sphere | Security-First Data • Fabric • Performance • Event-Driven</p>
 </footer>
 
 </body>
