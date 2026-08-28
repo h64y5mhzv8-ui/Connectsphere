@@ -80,6 +80,9 @@
     /* Data flow visualization */
     .data-flow-hero{width:100%;height:400px;background:linear-gradient(135deg, rgba(0,20,30,0.95), rgba(5,10,20,0.95));border-radius:14px;margin:28px 0;overflow:hidden;border:1px solid rgba(0,240,255,0.1);position:relative}
     .data-flow-canvas{width:100%;height:100%;display:block}
+    .data-flow-hero::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:120px;height:120px;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%2300f0ff%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%239b5cff%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2290%22 fill=%22none%22 stroke=%22%23333%22 stroke-width=%221%22 opacity=%220.3%22/%3E%3Cg transform=%22translate(100,100)%22%3E%3Ccircle cx=%220%22 cy=%22-45%22 r=%225%22 fill=%22%23999%22/%3E%3Ccircle cx=%2239%22 cy=%22-22%22 r=%224%22 fill=%22%23999%22/%3E%3Ccircle cx=%2239%22 cy=%2222%22 r=%224%22 fill=%22%23999%22/%3E%3Ccircle cx=%220%22 cy=%2245%22 r=%225%22 fill=%22%23666%22/%3E%3Ccircle cx=%22-39%22 cy=%2222%22 r=%224%22 fill=%22%23999%22/%3E%3Ccircle cx=%22-39%22 cy=%22-22%22 r=%224%22 fill=%22%23999%22/%3E%3Cline x1=%220%22 y1=%22-45%22 x2=%2239%22 y2=%22-22%22 stroke=%22%23999%22 stroke-width=%221%22 opacity=%220.6%22/%3E%3Cline x1=%220%22 y1=%22-45%22 x2=%22-39%22 y2=%22-22%22 stroke=%22%23999%22 stroke-width=%221%22 opacity=%220.6%22/%3E%3Cline x1=%2239%22 y1=%22-22%22 x2=%2239%22 y2=%2222%22 stroke=%22%23999%22 stroke-width=%221%22 opacity=%220.6%22/%3E%3Cline x1=%2239%22 y1=%2222%22 x2=%220%22 y2=%2245%22 stroke=%22%23999%22 stroke-width=%221%22 opacity=%220.6%22/%3E%3Cline x1=%220%22 y1=%2245%22 x2=%22-39%22 y2=%2222%22 stroke=%22%23999%22 stroke-width=%221%22 opacity=%220.6%22/%3E%3Cline x1=%22-39%22 y1=%2222%22 x2=%22-39%22 y2=%22-22%22 stroke=%22%23999%22 stroke-width=%221%22 opacity=%220.6%22/%3E%3Cline x1=%22-39%22 y1=%22-22%22 x2=%220%22 y2=%22-45%22 stroke=%22%23999%22 stroke-width=%221%22 opacity=%220.6%22/%3E%3Cline x1=%2239%22 y1=%22-22%22 x2=%22-39%22 y2=%2222%22 stroke=%22%23999%22 stroke-width=%221%22 opacity=%220.4%22/%3E%3Cline x1=%2239%22 y1=%2222%22 x2=%22-39%22 y2=%22-22%22 stroke=%22%23999%22 stroke-width=%221%22 opacity=%220.4%22/%3E%3C/g%3E%3Cpath d=%22M 130 80 Q 140 80 145 90 Q 145 105 130 105 Q 120 105 120 95 Q 120 80 130 80%22 fill=%22none%22 stroke=%22url(%23g)%22 stroke-width=%222%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M 130 120 L 155 120 Q 160 120 160 130 Q 160 145 145 145 Q 125 145 125 130%22 fill=%22none%22 stroke=%22url(%23g)%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E%3C/svg%3E') center/contain no-repeat;z-index:10;filter:drop-shadow(0 0 20px rgba(0, 240, 255, 0.5));animation:rotateLogo 20s linear infinite}
+
+    @keyframes rotateLogo{0%{transform:translate(-50%, -50%) rotate(0deg)}100%{transform:translate(-50%, -50%) rotate(360deg)}}
 
     form{max-width:620px;margin:8px 0 0 0;display:flex;flex-direction:column;gap:12px}
     input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:8px;color:var(--muted);transition:all .2s ease}
@@ -110,6 +113,7 @@
       .badge::after{transition:none}
       header::before{animation:none}
       .logo:hover img{animation:none}
+      .data-flow-hero::after{animation:none}
     }
 
     @media (max-width:700px){
@@ -117,6 +121,7 @@
       .cta{flex-direction:column;align-items:flex-start}
       nav a{margin-left:12px}
       .data-flow-hero{height:350px}
+      .data-flow-hero::after{width:80px;height:80px}
     }
   </style>
 </head>
